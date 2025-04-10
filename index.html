@@ -1,11 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kalyan OLX</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    
+    <!-- Top Brand Band -->
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Kalyan OLX</h1>
+    </header>
+
+    <!-- Special Pick Section -->
+    <section class="container my-5 text-center">
+        <h2>Special Pick</h2>
+        <div class="card mx-auto" style="max-width: 300px;" data-bs-toggle="modal" data-bs-target="#productModal"
+            onclick="showDetails(0)">
+            <img src="" id="specialImage" class="card-img-top special-img" alt="Special Pick">
+            <div class="card-body">
+                <h5 class="card-title" id="specialTitle">Loading...</h5>
+                <p class="card-text" id="specialDetails">Loading...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Listings Section -->
+    <section class="container my-5">
+        <h2 class="text-center">Listings</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="listings">
+            <!-- Listings will be dynamically added here -->
+        </div>
+    </section>
+
+    <!-- Modal for Product Details -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="" id="modalImage" class="img-fluid mb-3" alt="Product Image">
+                            <div id="extraImages" class="d-flex gap-2"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 id="modalTitle"></h4>
+                            <p><strong>Price:</strong> <span id="modalPrice"></span></p>
+                            <p><strong>Quantity:</strong> <span id="modalQuantity"></span></p>
+                            <p><strong>Description:</strong> <span id="modalDescription"></span></p>
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="itsNo" class="form-label">ITS No</label>
+                                    <input type="text" class="form-control" id="itsNo" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="mobile" class="form-label">Mobile No</label>
+                                    <input type="tel" class="form-control" id="mobile" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Address</label>
+                                    <textarea class="form-control" id="address" rows="3" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
